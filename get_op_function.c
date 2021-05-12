@@ -27,7 +27,7 @@ void get_op_function(char **tokens, unsigned int line_number, stack_t **head)
 
 	if (strcmp(tokens[0], "push") == 0)
 	{
-		if (is_number(tokens[1]) != 0)
+		if (tokens[1] == NULL || is_number(tokens[1]) != 0)
 		{
 			fprintf(stderr, "L%u: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
