@@ -24,7 +24,7 @@ void get_op_function(char **tokens, unsigned int line_number, stack_t **head)
 	{
 		if (is_number(tokens[1]) != 0)
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			fprintf(stderr, "L%u: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
 		}
 		else
