@@ -9,6 +9,7 @@
 #include <sys/stat.h> /*Open*/
 #include <fcntl.h> /*Open*/
 #include <unistd.h> /*Read*/
+#include <ctype.h> /*isdigit*/
 
 /* extern int prueba; */
 
@@ -25,9 +26,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -40,15 +41,24 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /*PROTOTYPES*/
-char *_read(const char *filename);/*nombre archivo*/
+char *_read(const char *filename);
 char *_strdup(char *str);
 void *_calloc(unsigned int nmemb, unsigned int size);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **split_line(char *line);
 unsigned int counter_words(char *str);
+int is_number(char *str);
+int create_begining(stack_t **head, int data);
+void free_array(char **tokens);
+void free_list(stack_t *head);
+
+/*FUNCTIONS PROTOTYPES*/
+void get_op_function(char **tokens, unsigned int line_number, stack_t **head);
+void pall_f(stack_t **stack, __attribute__((unused))unsigned int line_number);
+
 #endif /* MONTY_H */

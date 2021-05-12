@@ -1,22 +1,28 @@
 #include "monty.h"
 
-
+/**
+ * _read - open a file and keep it in a buffer
+ * @filename: name of the file to open
+ * Return: pinter of the buffer
+ */
 char *_read(const char *filename)/*nombre archivo*/
 {
 	char *file_content = NULL;
 	ssize_t readfile;
 	int file_descriptor;
 
-	/*printf("%d\n", prueba);*/
 	file_descriptor = open(filename, O_RDONLY);
 	if (file_descriptor == -1)
-    {
-        fprintf(stderr, "Error: Can't open file %s\n", filename);
-        exit(EXIT_FAILURE);
-    }
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", filename);
+		exit(EXIT_FAILURE);
+	}
 	file_content = _calloc(4056, sizeof(char));
 	if (file_content == NULL)
-		exit(0); /*fallo de memoria*/
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 	readfile = read(file_descriptor, file_content, 4056);
 	if (readfile == -1)
 		return (0);
