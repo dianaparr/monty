@@ -17,6 +17,11 @@ void get_op_function(char **tokens, unsigned int line_number, stack_t **head)
 		{"pint", pint_f},
 		{"pop", pop_f},
 		{"swap", swap_f},
+		{"add", add_f},
+		{"sub", sub_f},
+		{"div", div_f},
+		{"mul", mul_f},
+		{"mod", mod_f},
 		{NULL,  NULL}
 	};
 
