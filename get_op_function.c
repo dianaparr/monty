@@ -14,6 +14,9 @@ void get_op_function(char **tokens, unsigned int line_number, stack_t **head)
 	int data = 0;
 	instruction_t options[] = {
 		{"pall", pall_f},
+		{"pint", pint_f},
+		{"pop", pop_f},
+		{"swap", swap_f},
 		{NULL,  NULL}
 	};
 

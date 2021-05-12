@@ -53,6 +53,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **split_line(char *line);
 unsigned int counter_words(char *str);
 int is_number(char *str);
+int num_nodes(stack_t *head);
 int create_begining(stack_t **head, int data);
 void free_array(char **tokens);
 void free_list(stack_t *head);
@@ -60,5 +61,9 @@ void free_list(stack_t *head);
 /*FUNCTIONS PROTOTYPES*/
 void get_op_function(char **tokens, unsigned int line_number, stack_t **head);
 void pall_f(stack_t **stack, __attribute__((unused))unsigned int line_number);
+void pint_f(stack_t **stack, unsigned int line_number);
+void pop_f(stack_t **stack, unsigned int line_number);
+void swap_f(stack_t **stack, unsigned int line_number);
+
 
 #endif /* MONTY_H */
