@@ -54,5 +54,5 @@ void get_op_function(unsigned int line_number, stack_t **stack)
 			i++;
 		}
 	}
-	free(for_free.tokens);
+	/* free(for_free.tokens); */
 }
