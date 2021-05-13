@@ -84,5 +84,7 @@ void sub_f(stack_t **stack, unsigned int line_number);
 void div_f(stack_t **stack, unsigned int line_number);
 void mul_f(stack_t **stack, unsigned int line_number);
 void mod_f(stack_t **stack, unsigned int line_number);
+void nop_f(stack_t **stack, unsigned int line_number);
+void pchar_f(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */

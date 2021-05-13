@@ -22,9 +22,13 @@ void get_op_function(unsigned int line_number, stack_t **stack)
 		{"div", div_f},
 		{"mul", mul_f},
 		{"mod", mod_f},
-		{NULL,  NULL}
+		{"nop", nop_f},
+		{"pchar", pchar_f},
+		{NULL,  NULL} /*"#hola"*/
 	};
 
+	if (for_free.tokens[0][0] == '#')
+		return;
 	while (options[i].opcode != NULL)
 	{
 		if (strcmp(for_free.tokens[0], options[i].opcode) == 0)

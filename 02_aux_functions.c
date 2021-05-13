@@ -11,7 +11,7 @@ int is_number(char *str)
 	int len, i = 0;
 
 	len = strlen(str);
-	if (str[i] == '-') /*if is negative do not check '-'*/
+	if (str[i] == '-' && len > 1) /*if is negative do not check '-'*/
 		i++;
 	for ( ; i < len; i++)
 	{
