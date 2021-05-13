@@ -1,6 +1,28 @@
 #include "monty.h"
 
 /**
+ *push_f - prints all the values on the stack
+ *@stack: pointer to a pointer to the head of a list
+ *@line_number: number of the command in the source file
+ *Return: Nothing
+ */
+void push_f(stack_t **stack, unsigned int line_number)
+{
+	int data;
+
+	if (for_free.tokens[1] == NULL || is_number(for_free.tokens[1]) != 0)
+	{
+		free_all(*stack);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{	data = atoi(for_free.tokens[1]);
+		create_begining(stack, data);
+	}
+}
+
+/**
  *pall_f - prints all the values on the stack
  *@stack: pointer to a pointer to the head of a list
  *@line_number: number of the command in the source file

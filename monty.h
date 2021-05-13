@@ -46,11 +46,9 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * struct free_data_s -
- * @file_content:
- * @tokens:
- *
- * Description:
+ * struct free_data_s - struct to keep global variables
+ * @file_content: buffer with the content of the source file
+ * @tokens: array with the commandas
  */
 typedef struct free_data_s
 {
@@ -70,11 +68,13 @@ unsigned int counter_words(char *str);
 int is_number(char *str);
 int num_nodes(stack_t *head);
 int create_begining(stack_t **head, int data);
+void free_all(stack_t *stack);
 void free_array(char **tokens);
 void free_list(stack_t *stack);
 
 /*FUNCTIONS PROTOTYPES*/
 void get_op_function(unsigned int line_number, stack_t **stack);
+void push_f(stack_t **stack, unsigned int line_number);
 void pall_f(stack_t **stack, __attribute__((unused))unsigned int line_number);
 void pint_f(stack_t **stack, unsigned int line_number);
 void pop_f(stack_t **stack, unsigned int line_number);

@@ -8,10 +8,12 @@
  */
 int is_number(char *str)
 {
-	int len, i;
+	int len, i = 0;
 
 	len = strlen(str);
-	for (i = 0; i < len; i++)
+	if (str[i] == '-') /*if is negative do not check '-'*/
+		i++;
+	for ( ; i < len; i++)
 	{
 		if (!isdigit(str[i]))
 		{

@@ -1,6 +1,18 @@
 #include "monty.h"
 
 /**
+ * free_all - free to array of the tokens, file content and list
+ * @stack: pointer to the list
+ * Return: nothing
+ */
+void free_all(stack_t *stack)
+{
+	free_array(for_free.tokens);
+	free(for_free.file_content);
+	free_list(stack);
+}
+
+/**
  * free_array - frees a double pointer
  * @tokens: the array to free
  * Return: nothing
@@ -19,7 +31,7 @@ void free_array(char **tokens)
 
 /**
  * free_list - frees a double pointer
- * @head: pointer to the list
+ * @stack: pointer to the list
  * Return: nothing
  */
 void free_list(stack_t *stack)

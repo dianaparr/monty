@@ -31,6 +31,8 @@ int main(int argc, char **argv)
 		len += strlen(aux) + 1;
 		line_counter += 1;
 		for_free.tokens = split_line(aux); /*tokenizar la linea (aux)*/ /*tokes*/
+		if (for_free.tokens == NULL)
+			continue;
 		get_op_function(line_counter, &head);/*enviar al get op function*/
 		free_array(for_free.tokens);
 	}

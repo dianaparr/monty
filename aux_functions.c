@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- *_strdup - returns a pointer to a newly allocated space in memory an copied
+ *_copy_line - returns a pointer to a newly allocated space in memory an copied
  *@str: the string that we copied
  *
  *Return: a pointer
@@ -82,7 +82,12 @@ char **split_line(char *line)
 	bufsize = counter_words(line);
 	array_tokens = malloc(bufsize * sizeof(char *) + 1);
 	if (!array_tokens)
-		return (NULL);
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		free(line);
+		free(for_free.file_content);
+		exit(EXIT_FAILURE);
+	}
 	single_token = strtok(line, delimit);
 	while (single_token)
 	{
