@@ -48,16 +48,16 @@ void pstr_f(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
 	stack_t *current = *stack;
 
-	while (current != NULL || current->n != 0)
+	if (num_nodes(*stack) != 0)
 	{
-		if (current->n > 32 && current->n <= 126)
-			printf("%c", current->n);
-		else
+		while (current != NULL || current->n != 0)
 		{
-			printf("\n");
-			return;
+			if (current->n > 32 && current->n <= 126)
+				printf("%c", current->n);
+			else
+				break;
+			current = current->next;
 		}
-		current = current->next;
 	}
 	printf("\n");
 }
