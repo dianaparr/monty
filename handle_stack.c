@@ -29,6 +29,9 @@ void pint_f(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
+		free_array(for_free.tokens);
+		free(for_free.file_content);
+		free_list(*stack);
 		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -47,6 +50,9 @@ void pop_f(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
+		free_array(for_free.tokens);
+		free(for_free.file_content);
+		free_list(*stack);
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -69,6 +75,9 @@ void swap_f(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || num_nodes(*stack) < 2)
 	{
+		free_array(for_free.tokens);
+		free(for_free.file_content);
+		free_list(*stack);
 		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}

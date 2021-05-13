@@ -104,7 +104,7 @@ char **split_line(char *line)
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int i;
-	char *mem_arr;
+	char *mem_arr = NULL;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);

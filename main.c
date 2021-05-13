@@ -9,11 +9,10 @@
  */
 int main(int argc, char **argv)
 {
-	char *file_content = NULL;
 	int len = 0;
 	unsigned int line_counter = 0;
 	char *aux = NULL;
-	char **tokens = NULL;
+	//ar **for_free.tokens = NULL;
 	stack_t *head = NULL;
 
 	if (argc != 2)
@@ -21,22 +20,22 @@ int main(int argc, char **argv)
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	file_content = _read(argv[1]);
-	if (file_content == NULL)
+	for_free.file_content = _read(argv[1]);
+	if (for_free.file_content == NULL)
 		exit(0);
 
-	while (*(file_content + len))
+	while (*(for_free.file_content + len))
 	{
-		while (*(file_content + len) == '\n')
+		while (*(for_free.file_content + len) == '\n')
 			len += 1;
-		aux = _strdup(file_content + len);
+		aux = _strdup(for_free.file_content + len);
 		len += strlen(aux) + 1;
 		line_counter += 1;
-		tokens = split_line(aux); /*tokenizar la linea (aux)*/
-		get_op_function(tokens, line_counter, &head);/*enviar al get op function*/
-		free_array(tokens);
+		for_free.tokens = split_line(aux); /*tokenizar la linea (aux)*/ /*tokes*/
+		get_op_function(line_counter, &head);/*enviar al get op function*/
+		free_array(for_free.tokens);
 	}
-	free(file_content);
+	free(for_free.file_content); /*Para estructura nueva*/
 	free_list(head);
 	return (0);
 }

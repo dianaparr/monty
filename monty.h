@@ -45,6 +45,21 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct free_data_s -
+ * @file_content:
+ * @tokens:
+ *
+ * Description:
+ */
+typedef struct free_data_s
+{
+	char *file_content;
+	char **tokens;
+} free_data_t;
+
+free_data_t for_free;
+
 /*PROTOTYPES*/
 char *_read(const char *filename);
 char *_strdup(char *str);
@@ -56,10 +71,10 @@ int is_number(char *str);
 int num_nodes(stack_t *head);
 int create_begining(stack_t **head, int data);
 void free_array(char **tokens);
-void free_list(stack_t *head);
+void free_list(stack_t *stack);
 
 /*FUNCTIONS PROTOTYPES*/
-void get_op_function(char **tokens, unsigned int line_number, stack_t **head);
+void get_op_function(unsigned int line_number, stack_t **stack);
 void pall_f(stack_t **stack, __attribute__((unused))unsigned int line_number);
 void pint_f(stack_t **stack, unsigned int line_number);
 void pop_f(stack_t **stack, unsigned int line_number);

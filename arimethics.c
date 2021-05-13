@@ -12,6 +12,9 @@ void add_f(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || num_nodes(*stack) < 2)
 	{
+		free_array(for_free.tokens);
+		free(for_free.file_content);
+		free_list(*stack);
 		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -31,6 +34,9 @@ void sub_f(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || num_nodes(*stack) < 2)
 	{
+		free_array(for_free.tokens);
+		free(for_free.file_content);
+		free_list(*stack);
 		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -50,11 +56,17 @@ void div_f(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || num_nodes(*stack) < 2)
 	{
+		free_array(for_free.tokens);
+		free(for_free.file_content);
+		free_list(*stack);
 		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (current->n == 0)
 	{
+		free_array(for_free.tokens);
+		free(for_free.file_content);
+		free_list(*stack);
 		fprintf(stderr, "L%u: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -74,6 +86,9 @@ void mul_f(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || num_nodes(*stack) < 2)
 	{
+		free_array(for_free.tokens);
+		free(for_free.file_content);
+		free_list(*stack);
 		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -93,11 +108,17 @@ void mod_f(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || num_nodes(*stack) < 2)
 	{
+		free_array(for_free.tokens);
+		free(for_free.file_content);
+		free_list(*stack);
 		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (current->n == 0)
 	{
+		free_array(for_free.tokens);
+		free(for_free.file_content);
+		free_list(*stack);
 		fprintf(stderr, "L%u: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}

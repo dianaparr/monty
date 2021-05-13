@@ -22,14 +22,14 @@ void free_array(char **tokens)
  * @head: pointer to the list
  * Return: nothing
  */
-void free_list(stack_t *head)
+void free_list(stack_t *stack)
 {
-	stack_t *temp;
+	stack_t *temp = NULL;
 
-	while (head != NULL)
+	while (stack != NULL)
 	{
-		temp = head->next;
-		free(head);
-		head = temp;
+		temp = stack->next;
+		free(stack);
+		stack = temp;
 	}
 }
