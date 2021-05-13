@@ -50,18 +50,17 @@ void pstr_f(stack_t **stack, __attribute__((unused))unsigned int line_number)
 
 	if (*stack == NULL)
 	{
-		printf("\n");
+		putchar(10);
 	}
 	while (current != NULL || current->n != 0)
 	{
-		if (current->n >= 32 && current->n <= 126)
-			printf("%c", current->n);
+		if (current->n > 0 && current->n <= 126)
+			putchar(current->n);
 		else
 		{
-			printf("\n");
-			return;
+			break;
 		}
 		current = current->next;
 	}
-	printf("\n");
+	putchar(10);
 }
