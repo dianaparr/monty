@@ -37,3 +37,31 @@ void pchar_f(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 }
+
+/**
+ *pstr_f - print string in ascii code
+ *@stack: pointer to a pointer to the head of a list
+ *@line_number: number of the command in the source file
+ *Return: Nothing
+ */
+void pstr_f(stack_t **stack, __attribute__((unused))unsigned int line_number)
+{
+	stack_t *current = *stack;
+
+	if (*stack == NULL)
+	{
+		printf("\n");
+	}
+	while (current != NULL || current->n != 0)
+	{
+		if (current->n >= 32 && current->n <= 126)
+			printf("%c", current->n);
+		else
+		{
+			printf("\n");
+			return;
+		}
+		current = current->next;
+	}
+	printf("\n");
+}
