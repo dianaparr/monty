@@ -62,7 +62,7 @@ free_data_t for_free;
 
 /*PROTOTYPES*/
 char *_read(const char *filename);
-char *_strdup(char *str);
+char *_copy_line(char *str);
 void *_calloc(unsigned int nmemb, unsigned int size);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **split_line(char *line);

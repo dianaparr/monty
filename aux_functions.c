@@ -6,7 +6,7 @@
  *
  *Return: a pointer
  */
-char *_strdup(char *str)
+char *_copy_line(char *str)
 {
 	int len = 0, i = 0;
 	char *dup = NULL;

@@ -12,7 +12,6 @@ int main(int argc, char **argv)
 	int len = 0;
 	unsigned int line_counter = 0;
 	char *aux = NULL;
-	//ar **for_free.tokens = NULL;
 	stack_t *head = NULL;
 
 	if (argc != 2)
@@ -28,7 +27,7 @@ int main(int argc, char **argv)
 	{
 		while (*(for_free.file_content + len) == '\n')
 			len += 1;
-		aux = _strdup(for_free.file_content + len);
+		aux = _copy_line(for_free.file_content + len);
 		len += strlen(aux) + 1;
 		line_counter += 1;
 		for_free.tokens = split_line(aux); /*tokenizar la linea (aux)*/ /*tokes*/
