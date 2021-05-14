@@ -80,7 +80,7 @@ char **split_line(char *line)
 		return (array_tokens);
 	}
 	bufsize = counter_words(line);
-	array_tokens = malloc(bufsize * sizeof(char *) + 1);
+	array_tokens = malloc((bufsize + 1) * sizeof(char *));
 	if (!array_tokens)
 	{
 		fprintf(stderr, "Error: malloc failed\n");

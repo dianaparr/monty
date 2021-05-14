@@ -26,7 +26,10 @@ int main(int argc, char **argv)
 	while (*(for_free.file_content + len))
 	{
 		while (*(for_free.file_content + len) == '\n')
+		{
 			len += 1;
+			line_counter++;
+		}
 		aux = _copy_line(for_free.file_content + len);
 		len += strlen(aux) + 1;
 		line_counter += 1;
