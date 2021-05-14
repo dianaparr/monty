@@ -17,13 +17,13 @@ char *_read(const char *filename)/*nombre archivo*/
 		fprintf(stderr, "Error: Can't open file %s\n", filename);
 		exit(EXIT_FAILURE);
 	}
-	file_content = _calloc(__INT_MAX__, sizeof(char));
+	file_content = _calloc(31966, sizeof(char));
 	if (file_content == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	readfile = read(file_descriptor, file_content, __INT_MAX__);
+	readfile = read(file_descriptor, file_content, 31966);
 	if (readfile == -1)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", filename);
