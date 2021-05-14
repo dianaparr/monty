@@ -11,7 +11,6 @@
 #include <unistd.h> /*Read*/
 #include <ctype.h> /*isdigit*/
 
-/* extern int prueba; */
 
 /*STRUCTS*/
 
@@ -59,33 +58,48 @@ typedef struct free_data_s
 free_data_t for_free;
 
 /*PROTOTYPES*/
+
+/* read.c */
 char *_read(const char *filename);
+
+/* create_node.c */
+int create_begining(stack_t **head, int data);
+
+/* aux_functions.c */
 char *_copy_line(char *str);
-void *_calloc(unsigned int nmemb, unsigned int size);
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-char **split_line(char *line);
 unsigned int counter_words(char *str);
+char **split_line(char *line);
+void *_calloc(unsigned int nmemb, unsigned int size);
+
+/* 02_aux_functions.c */
 int is_number(char *str);
 int num_nodes(stack_t *head);
-int create_begining(stack_t **head, int data);
-void free_all(stack_t *stack);
-void free_array(char **tokens);
-void free_list(stack_t *stack);
 
-/*FUNCTIONS PROTOTYPES*/
+/* get_op_function.c */
 void get_op_function(unsigned int line_number, stack_t **stack);
+
+/* handle_stack.c */
 void push_f(stack_t **stack, unsigned int line_number);
 void pall_f(stack_t **stack, __attribute__((unused))unsigned int line_number);
 void pint_f(stack_t **stack, unsigned int line_number);
 void pop_f(stack_t **stack, unsigned int line_number);
 void swap_f(stack_t **stack, unsigned int line_number);
+
+/* arimethics.c */
 void add_f(stack_t **stack, unsigned int line_number);
 void sub_f(stack_t **stack, unsigned int line_number);
 void div_f(stack_t **stack, unsigned int line_number);
 void mul_f(stack_t **stack, unsigned int line_number);
 void mod_f(stack_t **stack, unsigned int line_number);
+
+/* handle_string_functions.c */
 void nop_f(stack_t **stack, unsigned int line_number);
 void pchar_f(stack_t **stack, unsigned int line_number);
 void pstr_f(stack_t **stack, unsigned int line_number);
+
+/* free.c */
+void free_all(stack_t *stack);
+void free_array(char **tokens);
+void free_list(stack_t *stack);
 
 #endif /* MONTY_H */

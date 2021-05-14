@@ -2,10 +2,10 @@
 
 /**
  * main - Entry point
- * @argc: nunber of arguments
+ * @argc: number of arguments
  * @argv: arguments from the command line
  *
- * Return: 0 on succes
+ * Return: 0 on success
  */
 int main(int argc, char **argv)
 {

@@ -13,12 +13,15 @@ char *_copy_line(char *str)
 
 	if (str == NULL)
 		return (NULL);
-	/*obtain the lengt of the string*/
+	/*obtain the length of the string*/
 	while (str[len] != '\n' && str[len] != '\0')
 		len++;
 	dup = malloc(sizeof(char) * len + 1);
 	if (dup == NULL)
-		return (NULL);
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 	/*duplicate the string in the new pointer*/
 	while (str[i] != '\n' && str[len] != '\0')
 	{
@@ -119,36 +122,4 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	for (i = 0; i < (nmemb * size); i++)
 		mem_arr[i] = 0;
 	return (mem_arr);
-}
-
-/**
- * _realloc - allocates a new memory previous allocated
- * @ptr: the pointer to be new allocated
- * @old_size: the old size of the firs malloc
- * @new_size: the new size to be allocated
- *
- * Return: a new memory allocation
- */
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
-{
-	void *new_ptr = NULL;
-
-	if (old_size == new_size)
-		return (ptr);
-	if (new_size == 0 && ptr)
-	{
-		free(ptr);
-		return (NULL);
-	}
-	if (!ptr)
-		return (malloc(new_size));
-	new_ptr = (void *)malloc(new_size);
-	if (new_ptr == NULL)
-		return (NULL);
-	if (new_ptr)
-	{
-		memcpy(new_ptr, ptr, old_size);
-		free(ptr);
-	}
-	return (new_ptr);
 }

@@ -61,7 +61,7 @@ void pint_f(stack_t **stack, unsigned int line_number)
 }
 
 /**
- *pop_f - remueves the top element of the stack
+ *pop_f - removes the top element of the stack
  *@stack: pointer to a pointer to the head of a list
  *@line_number: number of the command in the source file
  *Return: Nothing
