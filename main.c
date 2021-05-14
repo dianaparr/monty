@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	}
 	for_free.file_content = _read(argv[1]);
 	if (for_free.file_content == NULL)
-		exit(0);
+		exit(EXIT_FAILURE);
 
 	while (*(for_free.file_content + len))
 	{

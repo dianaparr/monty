@@ -25,7 +25,7 @@ void get_op_function(unsigned int line_number, stack_t **stack)
 		{"nop", nop_f},
 		{"pchar", pchar_f},
 		{"pstr", pstr_f},
-		{NULL,  NULL} /*"#hola"*/
+		{NULL,  NULL}
 	};
 
 	if (for_free.tokens[0][0] == '#')
