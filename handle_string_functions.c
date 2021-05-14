@@ -50,7 +50,7 @@ void pstr_f(stack_t **stack, __attribute__((unused))unsigned int line_number)
 
 	if (num_nodes(*stack) != 0)
 	{
-		while (current != NULL || current->n != 0)
+		while (current != NULL && current->n != 0)
 		{
 			if (current->n > 32 && current->n <= 126)
 				printf("%c", current->n);
