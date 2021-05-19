@@ -48,11 +48,13 @@ typedef struct instruction_s
  * struct free_data_s - struct to keep global variables
  * @file_content: buffer with the content of the source file
  * @tokens: array with the commandas
+ * @status: status 0 for stack and 1 for queue
  */
 typedef struct free_data_s
 {
 	char *file_content;
 	char **tokens;
+	int status;
 } free_data_t;
 
 free_data_t for_free;
@@ -64,6 +66,8 @@ char *_read(const char *filename);
 
 /* create_node.c */
 int create_begining(stack_t **head, int data);
+int create_end(stack_t **head, int data);
+
 
 /* aux_functions.c */
 char *_copy_line(char *str);
@@ -77,6 +81,8 @@ int num_nodes(stack_t *head);
 
 /* get_op_function.c */
 void get_op_function(unsigned int line_number, stack_t **stack);
+void set_status(stack_t **stack, unsigned int line_number);
+
 
 /* handle_stack.c */
 void push_f(stack_t **stack, unsigned int line_number);

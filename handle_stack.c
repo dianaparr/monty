@@ -17,8 +17,12 @@ void push_f(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	else
-	{	data = atoi(for_free.tokens[1]);
-		create_begining(stack, data);
+	{
+		data = atoi(for_free.tokens[1]);
+		if (for_free.status == 0)
+			create_begining(stack, data);
+		else if (for_free.status == 1)
+			create_end(stack, data);
 	}
 }
 
