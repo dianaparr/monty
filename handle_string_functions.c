@@ -86,3 +86,28 @@ void rotl_f(stack_t **stack, __attribute__((unused))unsigned int line_number)
 		current->next = NULL;
 	}
 }
+
+/**
+ *rotr_f - rotates the stack to the top
+ *@stack: pointer to a pointer to the head of a list
+ *@line_number: number of the command in the source file
+ *Return: Nothing
+ */
+void rotr_f(stack_t **stack, __attribute__((unused))unsigned int line_number)
+{
+	stack_t *current = *stack;
+	stack_t *final = *stack;
+
+	if (*stack != NULL && num_nodes(*stack) >= 2)
+	{
+		while (final->next != NULL)
+		{
+			final = final->next;
+		}
+		final->next = current;
+		current->prev = final;
+		final->prev->next = NULL;
+		final->prev = NULL;
+		*stack = final;
+	}
+}

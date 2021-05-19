@@ -26,6 +26,7 @@ void get_op_function(unsigned int line_number, stack_t **stack)
 		{"pchar", pchar_f},
 		{"pstr", pstr_f},
 		{"rotl", rotl_f},
+		{"rotr", rotr_f},
 		{NULL,  NULL}
 	};
 

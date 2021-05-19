@@ -97,6 +97,7 @@ void nop_f(stack_t **stack, unsigned int line_number);
 void pchar_f(stack_t **stack, unsigned int line_number);
 void pstr_f(stack_t **stack, unsigned int line_number);
 void rotl_f(stack_t **stack, unsigned int line_number);
+void rotr_f(stack_t **stack, __attribute__((unused))unsigned int line_number);
 
 /* free.c */
 void free_all(stack_t *stack);
