@@ -20,6 +20,9 @@ push 4$
 pall$
 ```
 
+<img src='./Assets/montyFile.png' style="height:400px" />
+<img src='./Assets/montyOutput.png' style="height:400px"/>
+
 ### The monty program
 
 - Compilation
@@ -98,3 +101,20 @@ $ monty file_name
   Usage: `rotr`
 
 - **comments** When the first non-space character of a line is #, treat this line as a comment
+
+
+## Authors
+### **Diana Parra**
+[dianaparr](https://github.com/dianaparr)
+[twitter](https://twitter.com/dianaparra017)
+[linkedIn](https://www.linkedin.com/in/dev-diana-parra/)
+
+Diana is a natural sciences and environmental education graduate with a passion for programming logic, data science and backend development from Medellín-Colombia.
+
+### **Louvani**
+[Louvani](https://github.com/louvani)
+[Portfolio](https://louuvani.com)
+[twitter](https://twitter.com/PaulaLouvani)
+[linkedIn](https://www.linkedin.com/in/paula-louvani//)
+
+Louvani is a Software Engineer passionate about challenges that allow me to keep growing by learning and experimenting with new technologies.
