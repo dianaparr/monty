@@ -111,6 +111,8 @@ $ monty file_name
 
 Diana is a natural sciences and environmental education graduate with a passion for programming logic, data science and backend development from Medellín-Colombia.
 
+<br />
+
 ### **Louvani**
 [Louvani](https://github.com/louvani)
 [Portfolio](https://louuvani.com)
